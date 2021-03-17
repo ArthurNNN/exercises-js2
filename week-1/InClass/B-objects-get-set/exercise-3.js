@@ -3,6 +3,10 @@
 */
 
 // WRITE CODE HERE
+let kitten = {
+    name: "Gilbert",
+    price: 800
+}
 
 
 console.log(kitten.name);
