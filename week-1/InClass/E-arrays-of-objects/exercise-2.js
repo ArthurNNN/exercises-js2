@@ -39,12 +39,16 @@ DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
 
+// function getName(dist) {
+//     return dist.destinationName;
+// }
 
-let destinationNamesWithin500Kms = // Complete here
+let destinationNamesWithin500Kms = travelDestinations.filter(dist => dist.distanceKms < 500).map(dist => dist.destinationName);
+// Complete here
 
-let destinationNameReachableByFerry = // Complete here
+let destinationNameReachableByFerry = travelDestinations.filter(dist => dist.transportations.includes("ferry")).map(dist => dist.destinationName); // Complete here
 
-let destinationNamesMoreThan300KmsAwayByTrain = // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
+let destinationNamesMoreThan300KmsAwayByTrain = travelDestinations.filter(dist => dist.distanceKms > 300 && dist.transportations.includes("train")).map(dist => dist.destinationName); // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
 
 
 /*
