@@ -7,6 +7,13 @@ const studentGrades = {
     george: 17,
     abdul: 19,
   };
+
+
+  const studentGradesKeys = Object.keys(studentGrades.filter(studentGrade => studentGrade.));
+
+  studentGradesKeys.forEach((key) => {
+  console.log(`${key} - ${studentGrades[key]}`);
+});
   
   // Prints
   // TOM - 20
