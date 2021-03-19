@@ -100,4 +100,8 @@ var mentors = [
 ];
 
 //YOUR CODE HERE
+mentors.filter(mentor => mentor.job.city === "Barcelona")
+.filter(mentor => mentor.skills.includes("React"))
+.forEach(mentor => console.log(`Hi, my name is ${mentor.firstName} ${mentor.lastName}. I work in Barcelona and i know React.`) )
+
 
