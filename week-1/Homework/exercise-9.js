@@ -41,24 +41,60 @@ var product2 = {
   price: 9.99,
   stock: 2
 };
+var product3 = {
+  id: 3,
+  name: "Samsung Galaxy S21",
+  price: 1099,
+  stock: 15
+};
+var product4 = {
+  id: 4,
+  name: "Apple Watch 6",
+  price: 449,
+  stock: 27
+};
 
 products.push(product1);
 products.push(product2);
+products.push(product3);
+products.push(product4);
 
 var shoppingCart = {
   totalPrice: 0,
   selectedProducts: []
 };
 
-function addToShoppingCart(id){
+var foo = { 'bar': 'baz' }
 
+for (var i in foo) {
+  alert(i); // alerts key
+  alert(foo[i]); //alerts key's value
 }
 
-function removeFromShoppingCart(id){
+Object.keys(foo)
+  .forEach(function eachKey(key) {
+    alert(key); // alerts key 
+    alert(foo[key]); // alerts value
+  });
 
+var obj = { first: 'someVal', second: 'otherVal' };
+alert(Object.keys(obj)[0]); // returns first
+alert(Object.keys(obj)[1]); // returns second
+
+function addToShoppingCart(id) {
+  shoppingCart.selectedProducts.push(products[id - 1]);
+  shoppingCart.totalPrice = shoppingCart.totalPrice + products[id - 1].price;
 }
 
-function shop(){
+function removeFromShoppingCart(id) {
+  shoppingCart.selectedProducts.slice(id - 1, 1);
+  shoppingCart.totalPrice = shoppingCart.totalPrice - products[id - 1].price;
+}
+
+function shop() {
+  shoppingCart.selectedProducts.forEach(id => products[id - 1].stock--);
+  shoppingCart.selectedProducts = [];
+  shoppingCart.totalPrice = 0;
 
 }
 
@@ -67,24 +103,24 @@ addToShoppingCart(1);
 console.log("Step 1");
 console.log("Total Price = " + shoppingCart.totalPrice);
 console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
-console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p=>p.name));
+console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p => p.name));
 addToShoppingCart(2);
 console.log("Step 2");
 console.log("Total Price = " + shoppingCart.totalPrice);
 console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
-console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p=>p.name));
+console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p => p.name));
 addToShoppingCart(4);
 console.log("Step 3");
 console.log("Total Price = " + shoppingCart.totalPrice);
 console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
-console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p=>p.name));
+console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p => p.name));
 removeFromShoppingCart(2);
 console.log("Step 4");
 console.log("Total Price = " + shoppingCart.totalPrice);
 console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
-console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p=>p.name));
+console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p => p.name));
 shop();
 console.log("Step 5");
 console.log("Total Price = " + shoppingCart.totalPrice);
 console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
-console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p=>p.name));
+console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p => p.name));

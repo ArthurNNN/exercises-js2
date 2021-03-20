@@ -9,16 +9,16 @@ const studentGrades = {
 };
 
 
-const studentGradesKeys = Object.keys(studentGrades.filter(studentGrade => studentGrade.value > 18));
+Object.keys(studentGrades)
+  .forEach(function eachKey(key) {
+    if (studentGrades[key] > 18)
+      console.log(`${key} - ${studentGrades[key]}`)
+  });
 
-studentGradesKeys.forEach((key) => {
-  console.log(`${key} - ${studentGrades[key]}`);
-});
-
-
-
-for (let key in flowers) {
-  console.log('${flowers[key]}')
+for (let key in studentGrades) {
+  if (studentGrades[key] > 18) {
+    console.log(`${key} - ${studentGrades[key]}`)
+  }
 }
 
   // Prints
