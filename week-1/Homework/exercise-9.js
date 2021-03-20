@@ -30,31 +30,31 @@ In addition will substract 1 in the product stock of bought products
 var products = [];
 
 var product1 = {
-  id: 1,
+  id: 101,
   name: "Toaster X56 Plus",
   price: 12.98,
   stock: 10
 };
 var product2 = {
-  id: 2,
+  id: 202,
   name: "Watch Rocker",
   price: 9.99,
   stock: 10
 };
 var product3 = {
-  id: 3,
+  id: 203,
   name: "Samsung Galaxy S21",
   price: 1099,
   stock: 10
 };
 var product4 = {
-  id: 4,
+  id: 204,
   name: "Apple Watch 6",
   price: 449,
   stock: 10
 };
 var product5 = {
-  id: 5,
+  id: 205,
   name: "Nokia 3310",
   price: 5,
   stock: 10
@@ -107,28 +107,28 @@ function shop() {
 }
 
 //results
-addToShoppingCart(1);
+addToShoppingCart(101);
 console.log("Step 1");
 console.log("Total Price = " + shoppingCart.totalPrice);
 console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
 console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p => p.name));
 console.log('Shopping cart:');
 console.table(shoppingCart.selectedProducts);
-addToShoppingCart(2);
+addToShoppingCart(202);
 console.log("Step 2");
 console.log("Total Price = " + shoppingCart.totalPrice);
 console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
 console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p => p.name));
 console.log('Shopping cart:')
 console.table(shoppingCart.selectedProducts);
-addToShoppingCart(4);
+addToShoppingCart(204);
 console.log("Step 3");
 console.log("Total Price = " + shoppingCart.totalPrice);
 console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
 console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p => p.name));
 console.log('Shopping cart:')
 console.table(shoppingCart.selectedProducts);
-removeFromShoppingCart(2);
+removeFromShoppingCart(202);
 console.log("Step 4");
 console.log("Total Price = " + shoppingCart.totalPrice);
 console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
@@ -140,5 +140,5 @@ console.log("Step 5");
 console.log("Total Price = " + shoppingCart.totalPrice);
 console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
 console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p => p.name));
-console.log('Store list:')
+console.log('Products in the stock after purchase:')
 console.table(products);
