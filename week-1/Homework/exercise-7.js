@@ -6,7 +6,7 @@ and for each object, `console.log()` out the sentence:
 
 Here is the array:
 
-*/ 
+*/
 
 var writers = [
   {
@@ -42,5 +42,11 @@ var writers = [
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */
-
+console.log('Writers:');
 writers.forEach(writer => console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`));
+console.log('Alive writers:');
+writers.forEach(p => { 
+  if (p.alive === true && p.occupation === "writer") 
+console.log(`Hi, my name is ${p.firstName} ${p.lastName}. I am ${p.age} years old, and work as a ${p.occupation}.`); 
+}
+);

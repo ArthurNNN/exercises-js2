@@ -41,21 +41,21 @@ function removeSkill(mentors,newSkill){
 function addStudentLikes(mentors){
   //your code here
 }
-*/ 
+*/
 
 var mentors = [
   {
     firstName: "Antonio",
     lastName: "Miranda",
-    skills: ["JS","React","Node"],
+    skills: ["JS", "React", "Node"],
     class: "Mar1",
     studentLikes: 0,
     job:
-      {
-        company: "Google",
-        position: "Senior developer",
-        city: "Barcelona"
-      }
+    {
+      company: "Google",
+      position: "Senior developer",
+      city: "Barcelona"
+    }
   },
   {
     firstName: "Leo",
@@ -64,44 +64,92 @@ var mentors = [
     class: "Mar3",
     studentLikes: 0,
     job:
-      {
-        company: "FC Barcelona",
-        position: "Player",
-        city: "Barcelona"
-      }
+    {
+      company: "FC Barcelona",
+      position: "Player",
+      city: "Barcelona"
+    }
   },
   {
     firstName: "John",
     lastName: "VanDamme",
-    skills: ["React","Angular","Python","Node"],
+    skills: ["React", "Angular", "Python", "Node"],
     class: "Mar4",
     studentLikes: 0,
     job:
-      {
-        company: "Facebook",
-        position: "Software Manager",
-        city: "Chicago"
-      }
-  },  
+    {
+      company: "Facebook",
+      position: "Software Manager",
+      city: "Chicago"
+    }
+  },
   {
     firstName: "Giorgio",
     lastName: "Polvara",
-    skills: ["HTML","JS","React"],
+    skills: ["HTML", "JS", "React"],
     class: "Mar2",
     studentLikes: 0,
     job:
-      {
-        company: "Amazon",
-        position: "Senior developer",
-        city: "Barcelona"
-      }
+    {
+      company: "Amazon",
+      position: "Senior developer",
+      city: "Barcelona"
+    }
   },
 
 ];
 
 //YOUR CODE HERE
-mentors.filter(mentor => mentor.job.city === "Barcelona")
-.filter(mentor => mentor.skills.includes("React"))
-.forEach(mentor => console.log(`Hi, my name is ${mentor.firstName} ${mentor.lastName}. I work in Barcelona and i know React.`) )
+// mentors.filter(mentor => mentor.job.city === "Barcelona")
+//   .filter(mentor => mentor.skills.includes("React"))
+//   .forEach(mentor => console.log(`Hi, my name is ${mentor.firstName} ${mentor.lastName}. I work in Barcelona and i know React.`))
 
 
+mentors.forEach(m => {
+  //1
+  if (m.job.city === 'Barcelona' && m.skills.includes('React')) {
+    console.log(`Hi, my name is ${m.firstName} ${m.lastName}. I work in Barcelona and i know React.`)
+  }
+  //2
+  if (m.job.city === 'Barcelona') {
+    m.class = 'Jun1';
+    m.skills.push('SQL')
+  }
+  //3
+  m.addSkill = function (skill) {
+    this.skills.push(skill)
+  }
+  //7
+  m.addStudentLikes = function () {
+    this.studentLikes++;
+  }
+})
+
+//4
+function addSkill(mentors, newSkill) {
+  mentors.forEach(m => m.skills.push(newSkill))
+}
+
+//5
+function removeSkill(mentors, delSkill) {
+  mentors.forEach(m => {
+    m.skills = m.skills.filter(s => s !== delSkill)
+  })
+}
+
+//6
+function mentorWithMoreSkills(mentors) {
+  numberOfSkills = 0;
+  mentors.forEach(m => {
+    if (m.skills.length > numberOfSkills) {
+      numberOfSkills = m.skills.length;
+      mentorName = m.firstName + " " + m.lastName;
+    }
+  });
+  return mentorName;
+}
+
+//8
+function addStudentLikes(mentors) {
+  mentors.forEach(m => m.studentLikes++);
+}
