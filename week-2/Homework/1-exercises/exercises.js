@@ -15,6 +15,15 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+  arrayOfPeople.forEach(item => {
+    let h1 = document.createElement("h1");
+    h1.textContent = item.name;
+    content.appendChild(h1);
+
+    let h2 = document.createElement("h2");
+    h2.textContent = item.job;
+    content.appendChild(h2);
+  });
 }
 
 /**
@@ -26,6 +35,13 @@ function exerciseOne(arrayOfPeople) {
  */
 function exerciseTwo(shopping) {
   //Write your code in here
+  let content = document.querySelector("#content");
+  shopping.forEach(item => {
+    let ul = document.createElement("ul");
+    ul.textContent = item;
+    content.appendChild(ul);
+  });
+
 }
 
 /**
@@ -59,7 +75,47 @@ function exerciseTwo(shopping) {
 **/
 function exerciseThree(books) {
   //Write your code in here
+
+  books[0].img = "https://pbs.twimg.com/media/EZhSgmkXgAE6kVK.png";
+  books[1].img = "https://cdn1.ozone.ru/multimedia/1012749475.jpg";
+  books[2].img = "https://cdn11.bigcommerce.com/s-muuiixt7p8/images/stencil/500x659/products/145920/328302/41BKx1AxQWL__84695.1565156161.jpg?c=2";
+
+  let content = document.querySelector("#content");
+  let h1 = document.createElement("h1");
+  h1.textContent = "Book list";
+  content.appendChild(h1);
+
+  let ul = document.createElement("ul");
+  ul.style.display = "flex";
+  ul.style.justifyContent = "space-around";
+  ul.style.listStyle = "none";
+  ul.style.textAlign = "center";
+
+  content.appendChild(ul);
+
+  books.forEach(item => {
+
+    let p = document.createElement("p");
+    p.textContent = item.title + " - " + item.author;
+    p.style.padding = "20px";
+
+    let img = document.createElement("img");
+    img.src = item.img;
+    img.style.maxHeight = "200px";
+    img.style.margin = "0 0 10px 0";
+
+    let li = document.createElement("li");
+    li.appendChild(p);
+    li.appendChild(img);
+
+    if (item.alreadyRead === true) {
+      li.style.backgroundColor = "#8FBC8F";
+    } else {li.style.backgroundColor = "#E9967A";}
+
+    ul.appendChild(li);
+  });
 }
+
 
 //
 //
