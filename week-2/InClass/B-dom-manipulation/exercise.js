@@ -119,6 +119,6 @@ i = 0;
 var bgrChangeBtn = document.querySelector("#bgrChangeBtn");
 bgrChangeBtn.addEventListener("click", () => {
     document.body.style.backgroundColor = colors[i];
-    i >= colors.length-1 ? i=0 : i++;
+    i >= colors.length - 1 ? i = 0 : i++;
 });
 
