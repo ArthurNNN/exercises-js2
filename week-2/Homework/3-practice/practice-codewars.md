@@ -45,3 +45,26 @@ var summation = function (num) {
     }
     return sum;
 }
+
+- [Find the Difference in Age between Oldest and Youngest Family Members]
+function differenceInAges(ages){
+  oldest = 0;
+  youngest = 200;
+  for (item of ages) {
+    if (item > oldest) {
+      oldest = item
+    }
+    if (item < youngest) {
+      youngest = item
+    }
+  }
+  return [youngest, oldest, oldest - youngest]
+}
+
+- [Filter out the Geese]
+function gooseFilter (birds) {
+  var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+  birds = birds.filter(item => !geese.includes(item));
+  return birds;
+};
+
