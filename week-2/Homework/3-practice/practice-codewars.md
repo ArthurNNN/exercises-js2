@@ -9,7 +9,7 @@ Complete the following CodeWars on JavaScript concepts you learned in previous w
 - [Find the Difference in Age between Oldest and Youngest Family Members](https://www.codewars.com/kata/5720a1cb65a504fdff0003e2/train/javascript)
 - [Filter out the Geese](https://www.codewars.com/kata/57ee4a67108d3fd9eb0000e7/train/javascript)
 
-- [Is it even?]
+// Is it even?
 
 function testEven(n) {
    if ( n % 2 === 0 ){
@@ -18,7 +18,7 @@ function testEven(n) {
    else return false;
 }
 
-- [Will you make it?]
+// Will you make it?
 const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
   if (mpg*fuelLeft >= distanceToPump) {
     return true;
@@ -27,7 +27,7 @@ const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
   }
 };
 
-- [Removing elements]
+// Removing elements
 function removeEveryOther(arr){
   for (i = arr.length-1; i > 0; i--) {
     if (i % 2 != 0) {
@@ -37,7 +37,7 @@ function removeEveryOther(arr){
   return arr;
 }
 
-- [Grasshopper - Summation]
+// Grasshopper - Summation
 var summation = function (num) {
     sum = 0;
     for (i = 1; i <= num; i++) {
@@ -46,7 +46,7 @@ var summation = function (num) {
     return sum;
 }
 
-- [Find the Difference in Age between Oldest and Youngest Family Members]
+// Find the Difference in Age between Oldest and Youngest Family Members
 function differenceInAges(ages){
   oldest = 0;
   youngest = 200;
@@ -61,7 +61,7 @@ function differenceInAges(ages){
   return [youngest, oldest, oldest - youngest]
 }
 
-- [Filter out the Geese]
+// Filter out the Geese
 function gooseFilter (birds) {
   var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
   birds = birds.filter(item => !geese.includes(item));
