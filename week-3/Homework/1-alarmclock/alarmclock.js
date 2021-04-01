@@ -3,7 +3,7 @@ function setAlarm() {
   let h1 = document.querySelector("#timeRemaining");
   let timeLeft = document.querySelector("#alarmSet").value.trim();
   const interval = setInterval(() => {
-    h1.textContent = `Time Remaining: ${new Date((timeLeft - 1) * 1000).toISOString().substr(11, 8)}`;
+    h1.textContent = `Time Remaining: ${new Date((timeLeft - 1) * 1000).toISOString().substr(14, 5)}`;
     if (timeLeft === 1) {
       document.body.style.backgroundColor = 'red';
       playAlarm();
