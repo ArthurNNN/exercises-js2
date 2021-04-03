@@ -60,18 +60,57 @@ var movies = [
 
 // create showMovies function
 // Task 1
-function showMovies(movies) {
-  movies.forEach(item => {
-    let p = document.createElement("p");
-    p.textContent = item.title + ' - ' + item.director;
-    document.querySelector("#all-movies").appendChild(p);
-  });
-  document.querySelector("#movies-number").innerText = movies.length;
+function showMovies() {
+  setTimeout(() => {
+    movies.forEach(item => {
+      let p = document.createElement("p");
+      p.textContent = item.title + ' - ' + item.director;
+      document.querySelector("#all-movies").appendChild(p);
+    });
+    document.querySelector("#movies-number").innerText = movies.length;
+  }
+    , 1000)
 }
 
-showMovies(movies);
+
 
 // create a new movie object for your favorite movie
+// Task 2
+const myMovie = {
+  title: "The Shawshank Redemption",
+  director: "Frank Darabont",
+  type: "drama",
+  haveWatched: true,
+}
 
 
 // create addMovies function
+function addMovie(m) {
+  setTimeout(() => {
+    movies.push(m)
+  }, 2000);
+}
+
+addMovie(myMovie);
+
+// Task 3
+setTimeout(showMovies, 1000);
+
+// Task 4
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  let title = document.querySelector("#title").value.trim();
+  let director = document.querySelector("#director").value.trim();
+  let type = document.querySelector("#type").value.trim();
+  let haveWatched = document.querySelector("#haveWatched").checked;
+  newMovie = { title, director, type, haveWatched };
+  movies.push(newMovie);
+  setTimeout(() => {
+    let p = document.createElement("p");
+    p.textContent = title + ' - ' + director;
+    document.querySelector("#all-movies").appendChild(p);
+    document.querySelector("#movies-number").innerText = movies.length;
+  }, 1000);
+});
