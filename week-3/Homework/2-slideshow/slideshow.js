@@ -40,7 +40,7 @@ document.querySelector("#forward-auto").addEventListener("click", () => {
         document.querySelector("#stop").addEventListener("click", () => {
             clearInterval(forward);
         });
-    }, 1000)
+    }, 5000)
 });
 
 document.querySelector("#back-auto").addEventListener("click", () => {
@@ -50,6 +50,6 @@ document.querySelector("#back-auto").addEventListener("click", () => {
         document.querySelector("#stop").addEventListener("click", () => {
             clearInterval(backward);
         });
-    }, 1000)
+    }, 5000)
 });
 
