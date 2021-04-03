@@ -8,6 +8,14 @@ const links = ["https:\/\/images.dog.ceo\/breeds\/kelpie\/n02105412_5282.jpg", "
 let i = 0;
 postImage(i);
 
+function nextLoopId(){
+    i >= links.length - 1 ? i = 0 : i++;
+}
+
+function prevLoopId(){
+    i <= 0 ? i = links.length - 1 : i--;
+}
+
 function postImage(i) {
     let img = document.querySelector("#image");
     img.src = links[i];
@@ -16,18 +24,18 @@ function postImage(i) {
 }
 
 document.querySelector("#forward").addEventListener("click", () => {
-    i >= links.length - 1 ? i = 0 : i++;
+    nextLoopId();
     postImage(i);
 });
 
 document.querySelector("#back").addEventListener("click", () => {
-    i <= 0 ? i = links.length - 1 : i--;
+    prevLoopId();
     postImage(i);
 });
 
 document.querySelector("#forward-auto").addEventListener("click", () => {
     const forward = setInterval(() => {
-        i >= links.length - 1 ? i = 0 : i++;
+        nextLoopId();
         postImage(i);
         document.querySelector("#stop").addEventListener("click", () => {
             clearInterval(forward);
@@ -37,7 +45,7 @@ document.querySelector("#forward-auto").addEventListener("click", () => {
 
 document.querySelector("#back-auto").addEventListener("click", () => {
     const backward = setInterval(() => {
-        i <= 0 ? i = links.length - 1 : i--;
+        prevLoopId();
         postImage(i);
         document.querySelector("#stop").addEventListener("click", () => {
             clearInterval(backward);
